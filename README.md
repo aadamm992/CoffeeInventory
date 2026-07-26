@@ -17,8 +17,6 @@ This project is not meant to be a production-ready application. It is mainly a p
 
 The goal of this project is learning and improving my development skills while creating something that is actually useful in everyday life.
 
-Because let's be honest: coffee inventory management is a serious matter.
-
 ## Technologies
 
 - C#
