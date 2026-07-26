@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="CoffeeInventory.Wpf.Views.MenuBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CoffeeInventory.Wpf.Views"
+             xmlns:viewModels="clr-namespace:CoffeeInventory.Wpf.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewModels:MenuBarViewModel}"
+             mc:Ignorable="d"
+             Background="#F0F0F0"
+             d:DesignHeight="20"
+             d:DesignWidth="750">
+    
+    <Menu>
+        
+        <MenuItem Header="_File"
+                  FontSize="16">
+            
+            <!--Backup MenuItem-->
+            <MenuItem Header="_Backup"
+                      FontSize="12"
+                      Command="{Binding DatabaseBackupToCsvButtonCommand}" />
+            
+            <!--Recovery MenuItem-->
+            <MenuItem Header="_Recovery"
+                      FontSize="12"
+                      Command="{Binding DatabaseRecoveryFromCsvButtonCommand}" />
+
+            <!--Open In Explorer MenuItem-->
+            <MenuItem Header="_Open..."
+                      FontSize="12"
+                      Command="{Binding OpenBackupDirectoryButtonCommand}" />
+
+            <Separator />
+
+            <!--Exit MenuItem-->
+            <MenuItem Header="E_xit"
+                      FontSize="12"
+                      Command="{Binding ExitButtonCommand}" />
+
+        </MenuItem>
+
+    </Menu>
+    
+</UserControl>

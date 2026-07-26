@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>Resources\NespressoIcon.ico</ApplicationIcon>
+        <AssemblyName>CoffeeInventory</AssemblyName>
+        <UserSecretsId>6a51aebf-64a7-4a96-89dc-a7390dfa96f0</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="Resources\Images\Add.png" />
+        <None Remove="Resources\Images\Trash.png" />
+        <None Remove="Resources\NespressoIcon.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.6" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.6" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.6" />
+        <PackageReference Include="Serilog" Version="4.3.1" />
+        <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="10.0.1" />
+        <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CoffeeInventory.Infrastructure\CoffeeInventory.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Resources\Images\Add.png" />
+        <Resource Include="Resources\Images\Trash.png" />
+        <Resource Include="Resources\NespressoIcon.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="appsettings.Development.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>

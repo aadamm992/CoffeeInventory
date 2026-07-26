@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeInventory.Domain", "CoffeeInventory.Domain\CoffeeInventory.Domain.csproj", "{E403F832-367D-4616-BB7F-98AA97FADC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeInventory.Infrastructure", "CoffeeInventory.Infrastructure\CoffeeInventory.Infrastructure.csproj", "{5F1836D2-2D60-4C2D-8C85-65F2B4DB1098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeInventory.Application", "CoffeeInventory.Application\CoffeeInventory.Application.csproj", "{A7AA0100-568D-4AEE-B3F4-04FB2468B0C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeInventory.Wpf", "CoffeeInventory.Wpf\CoffeeInventory.Wpf.csproj", "{7BFE4AEB-E6CA-403F-BF1B-DF13A44D0910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeInventory.Cli", "CoffeeInventory.Cli\CoffeeInventory.Cli.csproj", "{86CBCC93-131E-45C4-9CC2-0BA7EEB06006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E403F832-367D-4616-BB7F-98AA97FADC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E403F832-367D-4616-BB7F-98AA97FADC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E403F832-367D-4616-BB7F-98AA97FADC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E403F832-367D-4616-BB7F-98AA97FADC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1836D2-2D60-4C2D-8C85-65F2B4DB1098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1836D2-2D60-4C2D-8C85-65F2B4DB1098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1836D2-2D60-4C2D-8C85-65F2B4DB1098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1836D2-2D60-4C2D-8C85-65F2B4DB1098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7AA0100-568D-4AEE-B3F4-04FB2468B0C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7AA0100-568D-4AEE-B3F4-04FB2468B0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7AA0100-568D-4AEE-B3F4-04FB2468B0C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7AA0100-568D-4AEE-B3F4-04FB2468B0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFE4AEB-E6CA-403F-BF1B-DF13A44D0910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFE4AEB-E6CA-403F-BF1B-DF13A44D0910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFE4AEB-E6CA-403F-BF1B-DF13A44D0910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BFE4AEB-E6CA-403F-BF1B-DF13A44D0910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CBCC93-131E-45C4-9CC2-0BA7EEB06006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CBCC93-131E-45C4-9CC2-0BA7EEB06006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CBCC93-131E-45C4-9CC2-0BA7EEB06006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CBCC93-131E-45C4-9CC2-0BA7EEB06006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF52269B-A52D-4E96-825A-3C27AFFCF0C3}
+	EndGlobalSection
+EndGlobal

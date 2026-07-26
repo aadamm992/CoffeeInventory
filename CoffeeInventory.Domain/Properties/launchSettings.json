@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "NespressoInventory.Domain": {
+      "commandName": "Project"
+    }
+  }
+}
