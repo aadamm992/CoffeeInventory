@@ -15,6 +15,6 @@ public sealed class CoffeeInventoryDbContext(DbContextOptions<CoffeeInventoryDbC
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(CoffeeInventoryDesignDbContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(CoffeeInventoryDbContext).Assembly);
     }
 }
