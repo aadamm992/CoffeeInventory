@@ -1,10 +1,16 @@
 # CoffeeInventory ☕
 
-CoffeeInventory is a small WPF practice project made for learning and experimenting with desktop application development.
+CoffeeInventory is a small WPF practice project created for learning and experimenting with desktop application
+development. It serves as a playground for practicing C# and .NET development using technologies such as WPF, Entity
+Framework Core, and Dependency Injection, while applying common design patterns, architectural principles, and best
+practices.
 
-The main idea is simple: keep track of my coffee inventory so I always know how much coffee I have left and, most importantly, avoid the terrible situation of running out of coffee. ☕😄
+The main idea is simple: keep track of my coffee inventory so I always know how much coffee I have left and, most
+importantly, avoid the terrible situation of running out of coffee. ☕😄
 
-This project is not meant to be a production-ready application. It is mainly a playground for practicing WPF, UI design, data handling, and building a small useful application from scratch.
+This project is not intended to be production-ready. Instead, it focuses on learning, experimenting, and building a
+small but useful application from scratch while improving both desktop application development skills and knowledge of
+the .NET ecosystem.
 
 ## Features
 
@@ -13,14 +19,11 @@ This project is not meant to be a production-ready application. It is mainly a p
 - Keep track of available coffee quantity
 - Simple and easy-to-use interface
 
-## Purpose
-
-The goal of this project is learning and improving my development skills while creating something that is actually useful in everyday life.
-
 ## Technologies
 
-- C#
-- WPF (Windows Presentation Foundation)
 - .NET
-- Entity Framework Core (EF Core) for data access
-- Dependency Injection for managing application services and improving maintainability
+- WPF
+- Entity Framework Core
+- Dependency Injection
+- SQL Server
+- MVVM
