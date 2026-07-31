@@ -37,7 +37,7 @@
                            FontWeight="Medium"
                            Padding="5,0,0,0"
                            d:Foreground="DodgerBlue"
-                           d:Text="2026.07.19 11:38 | Add new Coffee successfull"
+                           d:Text="2026.07.19 11:38 | Add new Coffee successfully"
                            Text="{Binding NotificationViewModel.Message}"
                            Visibility="{Binding NotificationViewModel.Message, Converter={StaticResource StringNotEmptyToVisibilityConverter}}"
                            HorizontalAlignment="Stretch" />
@@ -46,8 +46,7 @@
 
         </StatusBar>
 
-        <TabControl x:Name="MainTabControl"
-                    Grid.Row="1">
+        <TabControl x:Name="MainTabControl">
 
             <TabControl.Resources>
 

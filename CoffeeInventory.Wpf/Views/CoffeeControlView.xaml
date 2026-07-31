@@ -22,20 +22,6 @@
                     Value="16" />
         </Style>
 
-        <Style x:Key="ValidationLabelStyle"
-               TargetType="Label">
-            <Setter Property="FontSize"
-                    Value="11" />
-            <Setter Property="Foreground"
-                    Value="Red" />
-            <Setter Property="Padding"
-                    Value="0" />
-            <Setter Property="Height"
-                    Value="15" />
-            <Setter Property="Margin"
-                    Value="0,-4,0,0" />
-        </Style>
-
         <Style x:Key="CheckBoxLabelStyle"
                TargetType="Label">
             <Setter Property="FontSize"
@@ -125,7 +111,6 @@
                          HorizontalAlignment="Left"
                          Width="200"
                          FontSize="14"
-                         Height="25"
                          Style="{StaticResource TextBoxStyle}"
                          Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 

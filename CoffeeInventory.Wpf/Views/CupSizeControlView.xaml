@@ -11,61 +11,65 @@
              d:DesignHeight="290"
              d:DesignWidth="700">
 
-        <local:EntityControlViewBase EntityItemSource="{Binding CupSizesView}"
-                                     SelectedEntity="{Binding SelectedCupSize}"
-                                     EntityDisplayMemberPath="Name"
-                                     UpdateCommand="{Binding UpdateCommand}"
-                                     SaveAsNewCommand="{Binding SaveAsNewCommand}"
-                                     DeleteCommand="{Binding DeleteCommand}">
+    <local:EntityControlViewBase EntityItemSource="{Binding CupSizesView}"
+                                 SelectedEntity="{Binding SelectedCupSize}"
+                                 EntityDisplayMemberPath="Name"
+                                 UpdateCommand="{Binding UpdateCommand}"
+                                 SaveAsNewCommand="{Binding SaveAsNewCommand}"
+                                 DeleteCommand="{Binding DeleteCommand}">
 
-            <local:EntityControlViewBase.EditorContent>
+        <local:EntityControlViewBase.EditorContent>
 
-                <Grid Margin="20">
+            <Grid Margin="20">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-                    <Label Content="Name"
-                           Margin="0"
-                           FontSize="14"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center" />
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Content="Name"
+                       Margin="0"
+                       FontSize="14"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" />
 
-                    <TextBox Grid.Column="1"
-                             Margin="10,0,0,0"
-                             FontSize="14"
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Center"
-                             Width="120"
-                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Grid.Row="0"
+                         Grid.Column="1"
+                         Margin="10,0,0,0"
+                         FontSize="14"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Width="120"
+                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                    <Label Grid.Row="1"
-                           Margin="0"
-                           FontSize="14"
-                           Content="Volume (ml)"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center" />
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="0"
+                       FontSize="14"
+                       Content="Volume (ml)"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
 
-                    <TextBox Grid.Row="1"
-                             Grid.Column="1"
-                             Margin="10,0,0,0"
-                             FontSize="14"
-                             HorizontalAlignment="Center"
-                             VerticalAlignment="Center"
-                             Width="120"
-                             Text="{Binding VolumeMl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" />
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         Margin="10,0,0,0"
+                         FontSize="14"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Width="120"
+                         Text="{Binding VolumeMl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" />
 
-                </Grid>
+            </Grid>
 
-            </local:EntityControlViewBase.EditorContent>
+        </local:EntityControlViewBase.EditorContent>
 
-        </local:EntityControlViewBase>
+    </local:EntityControlViewBase>
 
 </UserControl>
