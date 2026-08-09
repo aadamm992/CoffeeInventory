@@ -94,9 +94,10 @@ public partial class TransactionViewModel : ObservableObject
             
             TransactionRows.Clear();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            _notificationService.Notify("Transaction failed.", NotificationType.Error);
+            _logger.LogWarning("Transaction failed: {Message}", ex.Message);
+            _notificationService.Notify(ex.Message, NotificationType.Warning);
         }
     }
     

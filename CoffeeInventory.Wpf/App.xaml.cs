@@ -1,10 +1,7 @@
-﻿using CoffeeInventory.Application.Services;
-using CoffeeInventory.Domain.Repositories;
+﻿using CoffeeInventory.Application;
 using CoffeeInventory.Infrastructure;
 using CoffeeInventory.Infrastructure.Data;
-using CoffeeInventory.Infrastructure.Repositories;
 using CoffeeInventory.Wpf.States;
-using CoffeeInventory.Wpf.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,33 +41,9 @@ public partial class App : System.Windows.Application
                services.AddDbContextFactory<CoffeeInventoryDbContext>(options =>
                    options.UseSqlServer(connectionString));
 
-               services.AddSingleton<ICoffeeRepository, CoffeeRepository>();
-               services.AddSingleton<ICupSizeRepository, CupSizeRepository>();
-               services.AddSingleton<ICapsuleTypeRepository, CapsuleTypeRepository>();
-               services.AddSingleton<IBrandRepository, BrandRepository>();
-               
-               services.AddSingleton<IDatabaseBackupRecoveryService, DatabaseBackupRecoveryService>();
-               
-               services.AddSingleton<CoffeeService>();
-               services.AddSingleton<CupSizeService>();
-               services.AddSingleton<CapsuleTypeService>();
-               services.AddSingleton<BrandService>();
-
-               services.AddSingleton<InventoryStore>();
-               services.AddSingleton<NotificationService>();
-
-               services.AddSingleton<MenuBarViewModel>();
-               services.AddTransient<NotificationViewModel>();
-               services.AddTransient<TransactionViewModel>();
-               services.AddTransient<InventoryViewModel>();
-               services.AddTransient<ControlsViewModel>();
-               services.AddTransient<BrandControlViewModel>();
-               services.AddTransient<CoffeeControlViewModel>();
-               services.AddTransient<CapsuleTypeControlViewModel>();
-               services.AddTransient<CupSizeControlViewModel>();
-
-               services.AddTransient<MainViewModel>();
-               services.AddTransient(service => new MainWindow(service.GetRequiredService<MainViewModel>()));
+               services.AddInfrastructure();
+               services.AddApplication();
+               services.AddWpf();
            })
            .Build();
     }
@@ -78,6 +51,7 @@ public partial class App : System.Windows.Application
     protected override async void OnStartup(StartupEventArgs e)
     {
         await _host.StartAsync();
+        Log.Information("Application started.");
 
         var inventoryStore = _host.Services.GetRequiredService<InventoryStore>();
         await inventoryStore.InitializeAsync();
