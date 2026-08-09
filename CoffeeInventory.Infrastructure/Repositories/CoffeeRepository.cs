@@ -91,6 +91,8 @@ public class CoffeeRepository : ICoffeeRepository
         existingCoffee.IsDecaffeinated = coffee.IsDecaffeinated;
         existingCoffee.BrandId = coffee.BrandId;
         existingCoffee.CapsuleTypeId = coffee.CapsuleTypeId;
+        existingCoffee.Quantity = coffee.Quantity;
+        existingCoffee.Consumed = coffee.Consumed;
 
         existingCoffee.CupSizes.Clear();
 

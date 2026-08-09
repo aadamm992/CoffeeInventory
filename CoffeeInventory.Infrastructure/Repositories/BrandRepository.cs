@@ -8,7 +8,7 @@ namespace CoffeeInventory.Infrastructure.Repositories;
 public class BrandRepository : IBrandRepository
 {
     private readonly IDbContextFactory<CoffeeInventoryDbContext> _dbContextFactory;
-    
+
     public BrandRepository(IDbContextFactory<CoffeeInventoryDbContext> dbContextFactory)
     {
         _dbContextFactory = dbContextFactory;
@@ -17,7 +17,7 @@ public class BrandRepository : IBrandRepository
     public async Task<IReadOnlyList<Brand>> GetAllAsync()
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
-        
+
         return await dbContext.Brands.AsNoTracking().ToListAsync();
     }
 
