@@ -10,14 +10,16 @@ public partial class NotificationViewModel : ObservableObject, IDisposable
     private readonly DispatcherTimer _hideTimer;
     private TimeSpan _autoHideDuration;
 
-    public NotificationViewModel(NotificationService notificationService)
+    public NotificationViewModel(NotificationService notificationService, int? autoHideDurationSeconds = null)
     {
         _notificationService = notificationService;
         _notificationService.OnNotify += HandleNotification;
 
         _hideTimer = new DispatcherTimer();
         _hideTimer.Tick += (_, _) => ClearNotification();
-        _autoHideDuration = TimeSpan.FromSeconds(10);
+
+        _autoHideDuration = TimeSpan.FromSeconds(autoHideDurationSeconds is null ? 10 : autoHideDurationSeconds.Value);
+
         _hideTimer.Interval = _autoHideDuration;
     }
 

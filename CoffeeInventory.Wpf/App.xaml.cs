@@ -43,7 +43,7 @@ public partial class App : System.Windows.Application
 
                services.AddInfrastructure();
                services.AddApplication();
-               services.AddWpf();
+               services.AddWpf(context.Configuration);
            })
            .Build();
     }
