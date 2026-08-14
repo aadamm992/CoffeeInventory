@@ -2,6 +2,5 @@
 
 public interface IDatabaseBackupRecoveryService
 {
-    Task BackUpToCsvAsync(string path);
-    Task RecoveryFromCsvAsync(string path);
+    Task BackupAsync();
 }

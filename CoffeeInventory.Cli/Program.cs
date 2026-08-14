@@ -47,7 +47,6 @@ internal abstract class Program
         services.AddTransient<BackupInventoryCommand>();
         services.AddTransient<ConsumedCommand>();
         services.AddTransient<InventoryCommand>();
-        services.AddTransient<RecoveryInventoryCommand>();
         services.AddTransient<ReplenishmentCommand>();
         services.AddTransient<TotalCommand>();
 
@@ -64,7 +63,6 @@ internal abstract class Program
              provider.GetRequiredService<BackupInventoryCommand>().Build(),
              provider.GetRequiredService<ConsumedCommand>().Build(),
              provider.GetRequiredService<InventoryCommand>().Build(),
-             provider.GetRequiredService<RecoveryInventoryCommand>().Build(),
              provider.GetRequiredService<ReplenishmentCommand>().Build(),
              provider.GetRequiredService<TotalCommand>().Build(),
          };

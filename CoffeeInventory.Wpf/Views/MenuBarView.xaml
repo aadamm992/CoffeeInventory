@@ -21,16 +21,6 @@
                       FontSize="12"
                       Command="{Binding DatabaseBackupToCsvButtonCommand}" />
             
-            <!--Recovery MenuItem-->
-            <MenuItem Header="_Recovery"
-                      FontSize="12"
-                      Command="{Binding DatabaseRecoveryFromCsvButtonCommand}" />
-
-            <!--Open In Explorer MenuItem-->
-            <MenuItem Header="_Open..."
-                      FontSize="12"
-                      Command="{Binding OpenBackupDirectoryButtonCommand}" />
-
             <Separator />
 
             <!--Exit MenuItem-->

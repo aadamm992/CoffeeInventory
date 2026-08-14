@@ -12,7 +12,7 @@ public static class DependencyInjection
     {
         services.AddSingleton<InventoryStore>();
 
-        services.AddSingleton<MenuBarViewModel>();
+        services.AddTransient<MenuBarViewModel>();
         services.AddTransient(service =>
         {
             var duration = configuration.GetValue<int>("Notification:AutoHideDurationSeconds");

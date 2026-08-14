@@ -79,7 +79,9 @@ public class CoffeeRepository : ICoffeeRepository
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
 
         var existingCoffee = await dbContext.Coffees
-            .Include(c => c.CupSizes)
+            .Include(coffee => coffee.Brand)
+            .Include(coffee => coffee.CupSizes)
+            .Include(coffee => coffee.CapsuleType)
             .FirstOrDefaultAsync(c => c.Id == coffee.Id);
 
         if (existingCoffee is null)

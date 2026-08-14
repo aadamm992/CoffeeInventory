@@ -5,12 +5,6 @@ namespace CoffeeInventory.Cli.Commands;
 
 internal class BackupInventoryCommand(IDatabaseBackupRecoveryService databaseBackupRecoveryService)
 {
-    private readonly string _backupFolderPath =
-        Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "CoffeeInventory",
-            "backup");
-    
     public Command Build()
     {
         var command = new Command("Backup", "Back up the current state of inventory")
@@ -20,7 +14,7 @@ internal class BackupInventoryCommand(IDatabaseBackupRecoveryService databaseBac
         
         command.SetAction(async _ =>
         {
-            await databaseBackupRecoveryService.BackUpToCsvAsync(_backupFolderPath);
+            await databaseBackupRecoveryService.BackupAsync();
         });
         
         return command;
