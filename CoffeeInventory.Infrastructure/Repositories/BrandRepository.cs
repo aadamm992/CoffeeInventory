@@ -2,6 +2,7 @@
 using CoffeeInventory.Domain.Repositories;
 using CoffeeInventory.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CoffeeInventory.Infrastructure.Repositories;
 
@@ -12,6 +13,13 @@ public class BrandRepository : IBrandRepository
     public BrandRepository(IDbContextFactory<CoffeeInventoryDbContext> dbContextFactory)
     {
         _dbContextFactory = dbContextFactory;
+    }
+
+    public async Task<Brand?> GetByNameAsync(string name)
+    {
+        await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
+
+        return await dbContext.Brands.FirstOrDefaultAsync(b => b.Name == name);
     }
 
     public async Task<IReadOnlyList<Brand>> GetAllAsync()

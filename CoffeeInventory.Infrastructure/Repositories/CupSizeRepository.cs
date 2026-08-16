@@ -14,6 +14,13 @@ public class CupSizeRepository : ICupSizeRepository
         _dbContextFactory = dbContextFactory;
     }
 
+    public async Task<CupSize?> GetByNameAsync(string name)
+    {
+        await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
+
+        return await dbContext.CupSizes.FirstOrDefaultAsync(c => c.Name == name);
+    }
+
     public async Task<IReadOnlyList<CupSize>> GetAllAsync()
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();

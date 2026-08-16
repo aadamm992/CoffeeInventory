@@ -4,9 +4,9 @@ using CoffeeInventory.Application.Services;
 
 namespace CoffeeInventory.Cli.Commands;
 
-internal class InventoryCommand(CoffeeService coffeeService)
+internal class InventoryCommand(CoffeeService coffeeService) : CommandBase
 {
-    public Command Build()
+    public override Command Build()
     {
         var command = new Command("Inventory", "Shows the coffees in inventory")
         {
@@ -45,7 +45,7 @@ internal class InventoryCommand(CoffeeService coffeeService)
                 var nameSeparator = RepeatChar('-', longestNameCount - coffee.Name.Length + 1 + longestQuantity - coffee.Quantity.ToString().Length);
                 var quantitySeparator = RepeatChar('-', longestConsumed - coffee.Consumed.ToString().Length + 1);
 
-                Console.WriteLine($"{coffee.Brand} {brandSeparator} {coffee.Name} {nameSeparator} {coffee.Quantity} {quantitySeparator} {coffee.Consumed}");
+                Console.WriteLine($"{coffee.Brand.Name} {brandSeparator} {coffee.Name} {nameSeparator} {coffee.Quantity} {quantitySeparator} {coffee.Consumed}");
             }
         });
 

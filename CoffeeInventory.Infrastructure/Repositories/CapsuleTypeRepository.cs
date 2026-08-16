@@ -14,6 +14,13 @@ public class CapsuleTypeRepository : ICapsuleTypeRepository
         _dbContextFactory = dbContextFactory;
     }
 
+    public async Task<CapsuleType?> GetByNameAsync(string name)
+    {
+        await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
+
+        return await dbContext.CapsuleTypes.FirstOrDefaultAsync(c => c.Name == name);
+    }
+
     public async Task<IReadOnlyList<CapsuleType>> GetAllAsync()
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();

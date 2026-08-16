@@ -4,9 +4,9 @@ using CoffeeInventory.Domain.Enums;
 
 namespace CoffeeInventory.Cli.Commands;
 
-internal class ReplenishmentCommand(CoffeeService coffeeService)
+internal class ReplenishmentCommand(CoffeeService coffeeService) : CommandBase
 {
-    public Command Build()
+    public override Command Build()
     {
         var command = new Command("Replenishment", "Submitted coffee replenishment")
         {
@@ -31,28 +31,21 @@ internal class ReplenishmentCommand(CoffeeService coffeeService)
 
         command.SetAction(async parseResult =>
         {
-            try
-            {
-                var names = parseResult.GetValue(namesOptions);
-                var quantity = parseResult.GetValue(quantityOption);
+            var names = parseResult.GetValue(namesOptions);
+            var quantity = parseResult.GetValue(quantityOption);
 
-                if (names != null)
+            if (names != null)
+            {
+                await coffeeService.UpdateCoffeesBatchAsync(names, quantity, TransactionType.Replenishment);
+
+                foreach (var name in names)
                 {
-                    await coffeeService.UpdateCoffeesBatchAsync(names, quantity, TransactionType.Replenishment);
+                    var coffee = await coffeeService.GetByNameAsync(name);
 
-                    foreach (var name in names)
-                    {
-                        var coffee = await coffeeService.GetByNameAsync(name);
-                        
-                        Console.WriteLine(coffee is not null 
-                            ? $"\e[33m{quantity} pieces {coffee.Brand} {coffee.Name} have been added to the stock\e[0m"
-                            : "\e[33mCoffee does not exist\e[0m");
-                    }
+                    Console.WriteLine(coffee is not null
+                        ? $"\e[33m{quantity} pieces {coffee.Brand} {coffee.Name} have been added to the stock\e[0m"
+                        : "\e[33mCoffee does not exist\e[0m");
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
         });
 

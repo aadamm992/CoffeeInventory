@@ -3,9 +3,9 @@ using CoffeeInventory.Application.Services;
 
 namespace CoffeeInventory.Cli.Commands;
 
-internal class TotalCommand(CoffeeService coffeeService)
+internal class TotalCommand(CoffeeService coffeeService) : CommandBase
 {
-    public Command Build()
+    public override Command Build()
     {
         var command = new Command("Total", "Shows the available coffee sum.")
         {

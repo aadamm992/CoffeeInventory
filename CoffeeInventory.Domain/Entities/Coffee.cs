@@ -15,4 +15,9 @@ public class Coffee
     public CapsuleType? CapsuleType { get; set; }
     
     public ICollection<CupSize> CupSizes { get; set; } = new HashSet<CupSize>();
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

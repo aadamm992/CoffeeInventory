@@ -6,4 +6,9 @@ public class Brand
     public string Name { get; set; } = null!;
     
     public ICollection<Coffee> Coffees { get; set; } = new HashSet<Coffee>();
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

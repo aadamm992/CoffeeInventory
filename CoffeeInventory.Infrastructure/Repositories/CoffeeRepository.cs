@@ -60,7 +60,7 @@ public class CoffeeRepository : ICoffeeRepository
             .Where(c => ids.Contains(c.Id))
             .ToListAsync();
     }
-
+    
     public async Task<IReadOnlyList<Coffee>> GetByNamesAsync(IEnumerable<string> names)
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
@@ -79,9 +79,9 @@ public class CoffeeRepository : ICoffeeRepository
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
 
         var existingCoffee = await dbContext.Coffees
-            .Include(coffee => coffee.Brand)
-            .Include(coffee => coffee.CupSizes)
-            .Include(coffee => coffee.CapsuleType)
+            .Include(c => c.Brand)
+            .Include(c => c.CupSizes)
+            .Include(c => c.CapsuleType)
             .FirstOrDefaultAsync(c => c.Id == coffee.Id);
 
         if (existingCoffee is null)

@@ -3,9 +3,9 @@ using System.CommandLine;
 
 namespace CoffeeInventory.Cli.Commands;
 
-internal class BackupInventoryCommand(IDatabaseBackupRecoveryService databaseBackupRecoveryService)
+internal class BackupInventoryCommand(IDatabaseBackupRecoveryService databaseBackupRecoveryService) : CommandBase
 {
-    public Command Build()
+    public override Command Build()
     {
         var command = new Command("Backup", "Back up the current state of inventory")
         {
