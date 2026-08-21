@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CoffeeInventory.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "l --list-coffees"
+    }
+  }
+}
